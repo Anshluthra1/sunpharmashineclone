@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
+
+body {
+	background: url(cc.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 !IMPORTANT;
+    width: 100%;
+    padding: 0 !IMPORTANT;
+    position: fixed;
+    background-attachment: fixed;
+    background-color: #1D1A16 !important;
+}
+
+.login-sess-exp {
+	color: white;
+	margin: auto;
+	font-size: 12px;
+	position: relative;
+	text-align: left;
+}
+
+</style>
+
+<script src="js/sha256.js"></script>       
+<script src="js/config.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="pv.jpeg">
+
+<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/5/intl/en_gb/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/5/intl/en_gb/util.js"></script></head>
+<body onload="displayMsg(); getMACAddress();">
+	
+		<div class="txt_center">
+			<div class="login_txt_cont">
+				<div class="title">
+					<strong>Mobile computing is <br><span class="txtlinethr">future</span> <span class="now"> NOW</span></strong>
+				</div>
+				<div class="short">
+					Business is no more restricted to 4 walls. Proteus Vision is with you always, as an app on your phone. Allows you to perform your important business tasks, anytime, anywhere. Did we say important tasks?
+					 Yes, you can configure what is important for you and you will receive alerts only for these tasks.
+				</div>
+				<!-- <a href="http://proteustech.in/mobility.html" target="_self" class="c-btn c-btn--primary ">Learn more
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> 
+				</a> -->
+			</div>
+		</div>
+		
+		<div class="container">
+        <div class="login_container tdTransitionInRight">
+		<div class="form_container">
+			<div onclick="window.open('ShineHelp.html','mywindow');" style="height: 36px;width: 80px;align-items: center;background-color: rgba(255, 255, 255, .1);border-radius: 20px;display: flex;position: fixed;top: 10px;right: 10px;cursor: pointer;">
+				<div id="" style="
+				    transform-origin: left top;
+				    transform: translateY(0px) scale(1);
+				    transition: transform .3s;
+				    font-size: 16px;
+				    font-weight: 500;
+				    -webkit-transition-timing-function: ease-in-out;
+				    transition-timing-function: ease-in-out;
+				    color: rgba(255, 255, 255, .6);
+				    width: 100%;
+				    color: azure;
+				">Help ?</div>
+			</div>
+            <div class="logo_container" style="
+                border-radius: 50%;
+                background-color: white;
+                width: 90px;
+                height: 90px;
+                min-width: 90px;
+                min-height: 90px;
+                margin-left: 2px;">
+                <img style="width: 49px;margin: auto;" src="logo_sun.png">
+			</div>
+			<div class="logo_container" style="margin-top: -5px;">
+				<img class="logo_image" style="height: 60px;" src="shine_logo.svg">
+			</div>
+			<form class="login_form" method="post" action="/ibase/AuthenticateServlet" name="login" autocomplete="off">
+				<input type="hidden" name="AUTH_MODE" value="I">
+				<input type="hidden" id="CLIENT_IP" name="CLIENT_IP" value="">
+				<input type="hidden" id="APPL_NAME" name="APPL_NAME" value="SFA">
+				<input type="hidden" id="MAC_ADDRESS" name="MAC_ADDRESS" value="4501015653736537363900144030">
+				<input type="hidden" id="CURRENT_GEO_POS" name="CURRENT_GEO_POS" value="">
+				<input type="hidden" id="ACTIVE" name="ACTIVE" value="Y">
+				<input type="hidden" id="FROM_CACHE" name="FROM_CACHE" value="false">
+				
+				<div class="field-container">
+					<div class="vision-ui vision-user logo"><img class="logoo" src="contact.png"> 
+					</div>
+					<div class="field_cont">
+						<input required="" type="text" id="id_user" name="USER" onblur="createIndexedDBTable();">
+						<div id="user_id_lbl">User ID</div>
+					</div>
+				</div>
+				
+				<div class="field-container">
+					<div class="vision-ui vision-password logo"><img class="logoo" src="lock.png">
+					</div>
+					
+					<div class="field_cont">
+						<input required="" type="password" name="PASSWORD" id="id_password" autocomplete="off">
+						<div id="user_id_lbl">Password</div>
+					</div>
+				</div>
+				
+				<div class="login-forgot_password">
+					<div><a class="login_forgot_href" href="javascript:forgotPassword();">Forgot Password ?</a></div>
+				</div>
+				<input type="hidden" name="isSHA256Appld" value="true">
+                <input type="hidden" name="loginMode" id="loginMode" value="RIA Lite">
+                <input type="submit" style="display:none;" id="id_login" name="Login" value="Login" onclick="convertIntoSHA256('id_password')">
+				<div class="login_button" onclick="loginFunc();">
+					Login
+				</div>
+
+				<div id="message" class="login-sess-exp">
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+	</div>
+	
+
+<script>
+var macAddress = "";
+var geoLocation = "";
+
+function loginFunc()
+{
+	 //Added by Shrutika on 15-09-2020 for The user icon which shows detail information about user should also show Login using User id/Mobile/email and user_id/mobile/email value
+	var user = document.getElementById("id_user").value;
+	console.log("Inside loginFunction.....120["+user);
+	document.cookie = "userName="+user+"; path=/";
+	 //Added by Shrutika on 15-09-2020 for The user icon which shows detail information about user should also show Login using User id/Mobile/email and user_id/mobile/email value
+	var loginId = document.getElementById("id_login");
+	loginId.click();
+}
+
+function displayMsg()
+{
+	var query = window.location.search.substring(1);
+	var parms = query.split('&'); 
+ 
+ 	for ( var i=0; i < parms.length; i++ ) 
+ 	{ 
+	 	var pos = parms[i].indexOf('='); 
+	 
+	 	if (pos > 0 && "ERR_MSG" == parms[i].substring(0,pos)) 
+	 	{ 
+	 		if(document.getElementById("message") != null)
+	 		{
+				document.getElementById("message").style = "padding-top: 22px";
+				document.getElementById("message").innerHTML = "Session has expired or not logged in, please login to proceed"; 
+	 		}
+		}
+ 	}
+ 	document.getElementById('id_user').focus();
+}
+
+function getMACAddress()
+{
+	console.log("In getMACAddress");
+	var nav = window.navigator;
+    var screen = window.screen;
+    var guid = nav.mimeTypes.length;
+    var userAgent = nav.userAgent;
+    console.log("In getMACAddress userAgent:["+nav.userAgent+"]");
+    var str1 = userAgent.substring(0,userAgent.indexOf('Chrome'));
+    var str2 = userAgent.substring(userAgent.indexOf('Chrome'));
+    str2 = str2.substring(str2.indexOf(' ')+1); 
+    var str3 = str1 + str2;
+    guid += str3.replace(/\D+/g, '');
+    guid += nav.plugins.length;
+    guid += screen.height || '';
+    guid += screen.width || '';
+    guid += screen.pixelDepth || '';
+    console.log("In getMACAddress uuid:["+guid+"]");
+    macAddress = guid;
+    var input = document.getElementById("MAC_ADDRESS");
+    if( input != null)
+    {
+    	input.value = macAddress;
+    }
+}
+
+function createIndexedDBTable()
+{
+	console.log("In createIndexedDBTable mac address:["+macAddress+"]");
+	var userID = document.getElementById("id_user");
+	var userIDVal = checkNull(userID.value);
+	console.log("In createIndexedDBTable userId:["+userIDVal+"]");
+	try
+	{
+		// This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
+		var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+
+		// Open (or create) the database
+		var open = indexedDB.open("UUIDDatabase", 1);
+
+		open.onerror = function(event) 	{
+			console.log("Failed to open database in createIndexedDBTable");
+		}
+		
+		// Create the schema
+		open.onupgradeneeded = function() {
+			console.log("In onupgradeneeded");
+		    var db = open.result;
+		    var store = db.createObjectStore("StoreUUID", {keyPath: "id"});
+		};
+
+		
+	
+	open.onsuccess = function() {
+		    // Start a new transaction
+		    var db = open.result;
+		    var tx = db.transaction("StoreUUID", "readwrite");
+		    var store = tx.objectStore("StoreUUID");
+
+		    // Query the data
+		    var getUUID = store.get(userIDVal);
+
+		    getUUID.onsuccess = function() {
+		    	
+		    	console.log("cache uuid for user "+userIDVal+" result:["+getUUID.result+"]");
+		    	var fromCache = document.getElementById("FROM_CACHE");
+		    	if( getUUID.result != null )
+		    	{
+		    		console.log("result is not null");
+			    	var uuid = checkNull(getUUID.result.uuid);
+			        console.log("cache uuid for user "+userIDVal+":["+uuid+"]");
+			        console.log("cache uuid for user "+userIDVal+" length:["+uuid.length+"]");
+			        if( uuid.length == 0 )
+			        {
+			        	if( fromCache != null )
+			    		{
+			    			fromCache.value = "false";
+			    			console.log("after set false cache value:["+fromCache.value+"]");
+			    		}
+			        	//store.put({id: userIDVal, uuid: macAddress});
+			        }
+			        else
+			        {
+			        	if( fromCache != null )
+			    		{
+			    			fromCache.value = "true";
+			    			console.log("after set true cache value:["+fromCache.value+"]");
+			    		}
+			        }
+		    	}
+		    	else
+		    	{
+		    		console.log("result is null");
+		    		//store.put({id: userIDVal, uuid: macAddress});
+		    		if( fromCache != null )
+		    		{
+		    			fromCache.value = "false";
+		    			console.log("after set false cache value:["+fromCache.value+"]");
+		    		}
+		    	}
+		    };
+		    getUUID.onerror = function() {
+		    	console.log("Failed to getting uuid");
+		    };
+
+		    // Close the db when the transaction is done
+		    tx.oncomplete = function() {
+		        db.close();
+		    };
+		}
+		
+		open.onblocked = function(event) {
+			console.log("Your database version can't be upgraded because the app is open in createIndexedDBTable:["+event+"]");
+		}
+	}
+	catch( e )
+	{
+		console.log("Unable to open IndexedDB Exception in createIndexedDBTable:["+e+"]");
+	}
+}
+
+function checkNull(val)
+{
+	var value = val + "";
+	if( value == null || value == undefined || value === "undefined")
+	{
+		value = "";
+	}
+	return value.trim();
+}
+
+function getGeoLocation() 
+{
+	console.log("in getGeoLocation");
+	if(navigator.geolocation)
+	{
+		console.log("in if");
+		navigator.geolocation.getCurrentPosition(function(position) {
+			console.log("in if :::");
+		 	var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		  	console.log("geoLocation:["+pos+"]");
+		  	pos = checkNull(pos);
+		  	if( pos.length > 0 )
+		  	{
+		  		pos = pos.replace(")","");
+		  		pos = pos.replace("(","");
+		  	}
+		  	console.log("geoLocation after remove bracket:["+pos+"]");
+		  	geoLocation = pos;
+		  	var currentGeoPos = document.getElementById('CURRENT_GEO_POS');
+		  	if( currentGeoPos != null )
+		    {
+			    currentGeoPos.value = geoLocation;
+		    }
+		});
+	}
+	else 
+	{
+		console.log("Geolocation not detected");
+		alert('Geolocation not detected');   
+	}
+}
+</script>
+
+</body>
+</html>
